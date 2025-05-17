@@ -1,0 +1,677 @@
+/* Battle Royale Multiplayer Mode Styles for Flappy Bird Game */
+
+/* Battle Royale Button */
+#battle-royale-button {
+    background: linear-gradient(145deg, #FF5722, #E91E63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#battle-royale-button:hover {
+    background: linear-gradient(145deg, #E91E63, #FF5722);
+}
+
+/* Battle Royale Modal */
+.battle-royale-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.battle-royale-modal-content {
+    background: linear-gradient(145deg, #003300, #004400);
+    color: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    font-family: 'Bangers', 'Arial', sans-serif;
+}
+
+.battle-royale-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.battle-royale-close:hover {
+    color: white;
+}
+
+.battle-royale-modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.battle-royale-modal-content h3 {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+
+/* Battle Royale Info */
+.battle-royale-info {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.battle-royale-info p {
+    margin-bottom: 8px;
+}
+
+/* Player Profile */
+.player-profile {
+    margin-bottom: 25px;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.profile-avatar {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-right: 15px;
+}
+
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#player-name-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: white;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#save-name-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#save-name-button:hover {
+    background: var(--secondary-color);
+}
+
+.profile-stats {
+    display: flex;
+}
+
+.profile-stat {
+    margin-right: 20px;
+}
+
+.profile-stat .stat-value {
+    font-size: 20px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.profile-stat .stat-label {
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Battle Royale Actions */
+.battle-royale-actions {
+    margin-bottom: 25px;
+}
+
+.start-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.start-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.cancel-button {
+    width: 100%;
+    padding: 10px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.cancel-button:hover {
+    background: #FF1744;
+}
+
+/* Matchmaking Status */
+.matchmaking-status {
+    text-align: center;
+}
+
+.matchmaking-status p {
+    margin-bottom: 10px;
+}
+
+.matchmaking-progress {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.matchmaking-progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 1s linear;
+}
+
+/* Match History */
+.match-history {
+    margin-bottom: 20px;
+}
+
+.history-list {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-rank {
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+
+.history-rank.top-rank {
+    color: var(--accent-color);
+}
+
+.history-details {
+    flex-grow: 1;
+}
+
+.history-date {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.history-prize {
+    font-size: 16px;
+    color: var(--accent-color);
+}
+
+.empty-history {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+/* Battle Royale Match Screen */
+#battle-royale-match-screen {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.match-header h2 {
+    font-size: 28px;
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.match-timer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-prize-pool {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prize-pool-label {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.prize-pool-amount {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.match-players-container {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.match-players-list {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.match-player-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.match-player-item:last-child {
+    border-bottom: none;
+}
+
+.match-player-item.current-player {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.player-rank {
+    font-size: 18px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+
+.player-avatar {
+    font-size: 24px;
+    color: #ccc;
+    margin: 0 15px;
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.ai-badge {
+    background: rgba(233, 30, 99, 0.2);
+    color: #E91E63;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.player-score {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.player-spins {
+    font-size: 14px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.match-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.match-spin-button {
+    flex-grow: 1;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.match-spin-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.match-spin-button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+.match-exit-button {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.match-exit-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Battle Royale Results Screen */
+#battle-royale-results-screen {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.results-header {
+    margin-bottom: 20px;
+}
+
+.results-header h2 {
+    font-size: 32px;
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.player-result {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.result-rank {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-rank.top-rank {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.result-message {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.result-prize {
+    font-size: 20px;
+    color: var(--accent-color);
+}
+
+.results-leaderboard {
+    margin-bottom: 30px;
+}
+
+.results-leaderboard h3 {
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.results-list {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.result-player-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.result-player-item:last-child {
+    border-bottom: none;
+}
+
+.result-player-item.current-player {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.player-prize {
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.results-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.play-again-button {
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-again-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.return-button {
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Bangers', 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.return-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Battle Royale Particles */
+.battle-royale-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+/* Battle Royale Notification */
+.battle-royale-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FF5722;
+    animation: notification-appear 0.3s ease-out forwards, notification-disappear 0.3s ease-in forwards 2.7s;
+}
+
+@keyframes notification-appear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes notification-disappear {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .battle-royale-modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .battle-royale-modal-content h2 {
+        font-size: 24px;
+    }
+    
+    .profile-avatar {
+        font-size: 30px;
+    }
+    
+    .profile-stat .stat-value {
+        font-size: 18px;
+    }
+    
+    .profile-stat .stat-label {
+        font-size: 10px;
+    }
+    
+    .match-header h2 {
+        font-size: 22px;
+    }
+    
+    .match-timer {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .results-header h2 {
+        font-size: 26px;
+    }
+    
+    .result-rank {
+        font-size: 36px;
+    }
+    
+    .result-message {
+        font-size: 20px;
+    }
+    
+    .results-actions {
+        flex-direction: column;
+    }
+}
