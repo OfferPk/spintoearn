@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5548e7;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .toggle {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 id="formTitle">Login</h2>
+
+  <input type="text" id="username" placeholder="Username" />
+  <input type="password" id="password" placeholder="Password" />
+  
+  <button onclick="handleSubmit()">Login</button>
+  
+  <div class="message" id="message"></div>
+
+  <p>
+    <span id="toggleText">Don't have an account?</span>
+    <span class="toggle" onclick="toggleForm()">Sign Up</span>
+  </p>
+</div>
+
+<script>
+  let isLogin = true;
+
+  function toggleForm() {
+    isLogin = !isLogin;
+    document.getElementById('formTitle').textContent = isLogin ? 'Login' : 'Sign Up';
+    document.querySelector('button').textContent = isLogin ? 'Login' : 'Sign Up';
+    document.getElementById('toggleText').textContent = isLogin ? "Don't have an account?" : "Already have an account?";
+    document.getElementById('message').textContent = '';
+  }
+
+  function handleSubmit() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const message = document.getElementById('message');
+
+    if (!username || !password) {
+      message.textContent = 'Please fill in both fields.';
+      return;
+    }
+
+    if (isLogin) {
+      const stored = JSON.parse(localStorage.getItem('user_' + username));
+      if (!stored || stored.password !== password) {
+        message.textContent = 'Invalid username or password.';
+      } else {
+        message.textContent = 'Login successful!';
+        // Redirect or load game
+        // window.location.href = 'game.html';
+      }
+    } else {
+      if (localStorage.getItem('user_' + username)) {
+        message.textContent = 'Username already exists.';
+      } else {
+        localStorage.setItem('user_' + username, JSON.stringify({ username, password }));
+        message.textContent = 'Signup successful! You can now log in.';
+        toggleForm();
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
