@@ -16,17 +16,17 @@ Browser-based Flappy Bird–style game with a spin-to-earn / reward wheel. Stati
 | `flappybirdwithspin.html` | Main self-contained playable game |
 | `enhanced-flappy-bird.html` | Experimental shell that loads modular features (incomplete — see notes) |
 | `login-screen.html` | Standalone login/signup UI demo (localStorage only) |
-| `css/` | Styles for modular features (mystery box, referral, rotation, battle royale) |
-| `js/` | Scripts for modular features |
+| `*.css` / `*.js` | Modular feature styles and scripts at repo root |
+| `js/screen-rotation.js`, `js/referral-system.js` | Safe placeholders (root copies were CSS saved as `.js`) |
 | `docs/` | Planning notes and known issues |
 
 ## Modular features
 
-These modules are intended for `enhanced-flappy-bird.html`:
+Intended for `enhanced-flappy-bird.html`:
 
-- **Mystery box** — `css/mystery-box.css`, `js/mystery-box.js`
-- **Battle royale** — `css/battle-royale.css`, `js/battle-royale.js` (optional; not wired into the enhanced shell by default)
-- **Referral / screen rotation** — CSS is present; JS files are safe placeholders (earlier copies wrongly stored CSS as `.js`)
+- **Mystery box** — `mystery-box.css`, `mystery-box.js`
+- **Battle royale** — `battle-royale.css`, `battle-royale.js` (optional; not wired into the enhanced shell by default)
+- **Referral / screen rotation** — CSS at repo root; JS placeholders under `js/`
 
 `enhanced-flappy-bird.html` still expects `original-game.js` and `original-styles.css`, which are **not** in this repo yet. Prefer `flappybirdwithspin.html` for a working game.
 
