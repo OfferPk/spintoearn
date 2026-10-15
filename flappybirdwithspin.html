@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Flappy Forest Flight - Combat Enhanced Edition</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="Play a quick forest flight arcade game, then try the Spin to Win wheel in your browser.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#071710">
+    <title>Flappy Forest Flight | Spin to Earn</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -610,10 +613,11 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="ui-polish.css">
 </head>
 <body>
     <div id="game-container">
-        <canvas id="game-canvas"></canvas>
+        <canvas id="game-canvas" role="img" aria-label="Flappy Forest Flight game area">Your browser does not support the game canvas.</canvas>
         
         <!-- UI Elements -->
         <div id="score-display" class="game-ui">0</div>
@@ -634,27 +638,31 @@
         
         <!-- Game Overlays -->
         <div id="start-screen" class="game-overlay active">
+            <p class="overlay-kicker">Forest arcade · Play + spin</p>
             <h1 class="overlay-title">Flappy Forest Flight</h1>
-            <p class="overlay-text">Combat Enhanced Edition</p>
-            <button id="start-button" class="overlay-button">Start Game</button>
-            <button id="spin-to-win-button" class="overlay-button" style="margin-top: 10px;">Spin to Win</button>
+            <p class="overlay-text">A fast-paced flight through the forest.</p>
+            <p class="overlay-hint">SPACE / ↑ / TAP TO FLAP<br>Z throw · X missile · ESC pause</p>
+            <button type="button" id="start-button" class="overlay-button">Start Game</button>
+            <button type="button" id="spin-to-win-button" class="overlay-button">Spin to Win</button>
         </div>
         
         <div id="game-over-screen" class="game-overlay">
             <h1 class="overlay-title">Game Over</h1>
             <p class="overlay-text">Score: <span id="final-score">0</span></p>
             <p class="overlay-text">High Score: <span id="high-score">0</span></p>
-            <button id="restart-button" class="overlay-button">Play Again</button>
+            <button type="button" id="restart-button" class="overlay-button">Play Again</button>
         </div>
         
         <div id="pause-screen" class="game-overlay">
             <h1 class="overlay-title">Game Paused</h1>
-            <button id="resume-button" class="overlay-button">Resume</button>
+            <button type="button" id="resume-button" class="overlay-button">Resume</button>
         </div>
         
         <!-- Spin to Win Game Overlay -->
         <div id="spin-to-win-screen" class="game-overlay">
+            <p class="overlay-kicker">Bonus round</p>
             <h1 class="overlay-title">Spin to Win</h1>
+            <p class="spin-subtitle">Choose a wheel and give it a spin.</p>
             
             <div class="spin-wheel-container">
                 <div class="spin-wheel" id="spin-wheel">
@@ -665,28 +673,28 @@
             </div>
             
             <div class="currency-options">
-                <button class="currency-button crypto active" id="btn-crypto">
+                <button type="button" class="currency-button crypto active" id="btn-crypto">
                     <i class="fas fa-coins"></i> Crypto
                 </button>
-                <button class="currency-button inr" id="btn-inr">
+                <button type="button" class="currency-button inr" id="btn-inr">
                     <span>₹</span> INR
                 </button>
-                <button class="currency-button usd" id="btn-usd">
+                <button type="button" class="currency-button usd" id="btn-usd">
                     <span>$</span> USD
                 </button>
-                <button class="currency-button pkr" id="btn-pkr">
+                <button type="button" class="currency-button pkr" id="btn-pkr">
                     <span>₨</span> PKR
                 </button>
             </div>
             
-            <button id="spin-button" class="spin-button">SPIN</button>
+            <button type="button" id="spin-button" class="spin-button">SPIN</button>
             
-            <div class="result-display">
+            <div class="result-display" role="status" aria-live="polite" aria-atomic="true">
                 <div class="result-amount" id="result-amount"></div>
                 <div class="result-message" id="result-message">Select a currency and spin the wheel!</div>
             </div>
             
-            <button id="return-button" class="overlay-button">Return to Menu</button>
+            <button type="button" id="return-button" class="overlay-button">Return to Menu</button>
         </div>
     </div>
 

@@ -14,6 +14,7 @@ Browser-based Flappy Bird–style game with a spin-to-earn / reward wheel. Stati
 |------|-------------|
 | `index.html` | Entry redirect to the main game |
 | `flappybirdwithspin.html` | Main self-contained playable game |
+| `ui-polish.css` | Responsive visual layer for the game and spin screens |
 | `enhanced-flappy-bird.html` | Experimental shell that loads modular features (incomplete — see notes) |
 | `login-screen.html` | Standalone login/signup UI demo (localStorage only) |
 | `*.css` / `*.js` | Modular feature styles and scripts at repo root |
